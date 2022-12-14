@@ -1,0 +1,34 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "./.vscode/build"
+        },
+        {
+            "label": "deploy",
+            "type": "shell",
+            "command": "./.vscode/deploy",
+            "problemMatcher": []
+        },
+        {
+            "label": "Execute pipeline",
+            "dependsOn": [
+                "build",
+                "deploy"
+            ],
+            "dependsOrder": "sequence",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "test",
+            "type": "shell",
+            "command": "mocha"
+        }
+    ]
+}
