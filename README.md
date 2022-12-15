@@ -1,10 +1,7 @@
-# vk-unity-sdk
-
 Advertising component must be added to clean object in first scene
 
 ## Contains: 
-
-### Interstitial advertising call time
+* Interstitial advertising call time serialized field
 #### Events:
 * AdvertisingStarted
 * AdvertisingEnded
