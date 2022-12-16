@@ -17,6 +17,8 @@ namespace VkSdk.Runtime.Components
 
         private void Awake()
         {
+            DontDestroyOnLoad(this);
+
             _bus = new Bus();
             _frontend = new MessagesFrontend(_bus);
             _webGlDispatcher.Construct(_bus);
