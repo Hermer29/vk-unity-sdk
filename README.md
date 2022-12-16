@@ -14,7 +14,6 @@ Functions of VkSdkFunctions:
 ---------------
 ```
 sdkInstance.ShowInterstitial();
-
 ```
 Shows interstitial advertisment, can be handled by events: InterstitialStarted, InterstitialEnded, InterstitialFailed
 
@@ -25,5 +24,26 @@ sdkInstance.ShowRewarded(string placement);
 Shows rewarded advertisment, can be handled by events: RewardedStarted, RewardedEnded, RewardedFailed
 
 ---------------
+
+```
+sdkInstance.NotifyFriendsLevelReached(int level);
+```
+Updates last completed level, which shows in vk notifications and friend list in games page
+
+---------------
+
+```
+sdkInstance.NotifyFriendsPointsScored(int points);
+```
+Like last method, but updates score value
+
+----------------
+
+```
+sdkInstance.NotifyFriendsMissionAccomplishedMessage(int missionIdentifier);
+```
+Like last method, but shows that user completes mission with specified identifier. Mission list for game configured in vk
+
+----------------
 
 VkSharingButton: attaches to passed to parameter button, on click it will launch vk sharing modal window
