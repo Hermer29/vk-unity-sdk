@@ -1,20 +1,29 @@
-Advertising component must be added to clean object in first scene
+In order to work, prefab from VkSdk folder should be added to first launched scene in game.
 
-## Contains: 
-* Interstitial advertising call time serialized field
-#### Events:
-* AdvertisingStarted
-* AdvertisingEnded
-* InterstitialStarted
-* InterstitialEnded
-* RewardedStarted
-* RewardedEnded
-* RewardedClosed
+### Quick start:
 
-#### Methods:
-*   bool TryShowInterstitial() // false if interstitial advertising call time is not ended
-*   void ShowRewarded(string key) // after end of ad, you will receive Rewarded*** with this key
+```
+var sdkInstance = VkSdkFunctions.Instance; 
+```
+Contained in in VkSdk.Runtime.Root namespace
 
-#### Components:
-*   Advertising: has everything descripted above
-*   VkSharingButton: attaches to passed to parameter button, on click it will launch vk sharing modal window
+Instance field assigned in Awake of the scene, in which VkSdk prefab has added. Contains all functions of sdk
+
+
+Functions of VkSdkFunctions:
+---------------
+```
+sdkInstance.ShowInterstitial();
+
+```
+Shows interstitial advertisment, can be handled by events: InterstitialStarted, InterstitialEnded, InterstitialFailed
+
+---------------
+```
+sdkInstance.ShowRewarded(string placement);
+```
+Shows rewarded advertisment, can be handled by events: RewardedStarted, RewardedEnded, RewardedFailed
+
+---------------
+
+VkSharingButton: attaches to passed to parameter button, on click it will launch vk sharing modal window
